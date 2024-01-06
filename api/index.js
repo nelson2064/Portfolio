@@ -34,7 +34,7 @@
 //         to: email,
 //         subject: 'Thank you for contacting us!',
 //         text: `Dear ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you as soon as possible.\n\nBest regards,\nYour Company`,
-//         website:`http://localhost:3000/, this is the our website from where we recive this email you have try to contact us from here though your email address `
+//         website:`https://www.grtr.online/, this is the our website from where we recive this email you have try to contact us from here though your email address `
 //     };
 
 //     // Notification email to the website owner
