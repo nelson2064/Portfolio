@@ -109,7 +109,7 @@ app.post('/send-email', (req, res) => {
         from: process.env.EMAIL_USER,
         to: email,
         subject: 'Thank you for contacting us!',
-        text: `Dear ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you as soon as possible. \nhttp://localhost:3000/, this is my website from where I receive this email you have try to contact us from here though your email address \n\n Best regards ,\n From Nelson Parajuli \n`,
+        text: `Dear ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you as soon as possible. \n https://www.grtr.online/, this is my website from where I receive the email you have try to contact us from my website though your email address \n\n Best regards ,\n From Nelson Parajuli \n`,
         website:` `
     };
 
