@@ -243,11 +243,60 @@ function closePopup() {
 // }
 
 // Your existing form submission code
+// document.getElementById('contactForm').addEventListener('submit', function (event) {
+//     event.preventDefault();
+//     showLoader(); // Show loader before making the fetch request
+
+//     const formData = new FormData(this);
+
+//     const jsonData = {};
+//     formData.forEach((value, key) => {
+//         jsonData[key] = value;
+//     });
+
+//     fetch('/send-email', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(jsonData),
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+//         // Handle success or display a confirmation message to the user
+
+//         // Show success popup
+//         showPopup();
+//     })
+//     .catch(error => {
+//         console.error(error);
+//         // Handle errors or display an error message to the user
+//     });
+// });
+
+    // Your existing form submission code
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    showLoader(); // Show loader before making the fetch request
 
+    // Check if the form is empty
     const formData = new FormData(this);
+    let formIsEmpty = true;
+
+    formData.forEach((value) => {
+        if (value.trim() !== '') {
+            formIsEmpty = false;
+            return;
+        }
+    });
+
+    if (formIsEmpty) {
+        // Show popup for empty form
+        alert('Please fill in the form before submitting.');
+        return;
+    }
+
+    showLoader(); // Show loader before making the fetch request
 
     const jsonData = {};
     formData.forEach((value, key) => {
@@ -274,6 +323,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         // Handle errors or display an error message to the user
     });
 });
+
 
 // // Your existing closePopup function
 // function closePopup() {
